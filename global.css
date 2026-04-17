@@ -28,6 +28,13 @@
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+body {
+	overflow-x: hidden;
+	width: 100%;
 }
 
 body {
@@ -35,7 +42,6 @@ body {
 	background: var(--surface);
 	color: var(--on-surface);
 	line-height: 1.6;
-	overflow-x: hidden;
 }
 
 img {
@@ -1165,15 +1171,16 @@ footer {
 		position: fixed;
 		top: 0;
 		right: 0;
-		height: 100dvh; /* use dynamic viewport height for mobile */
+		height: 100dvh;
 		width: 100%;
 		max-width: 320px;
 		background: var(--surface);
 		flex-direction: column;
 		justify-content: start;
 		padding: 48px 32px;
-		transform: translateX(100%);
-		visibility: hidden; /* Prevent horizontal scroll when closed */
+		margin: 0;
+		transform: translateX(101%); /* Extra 1% to ensure it's fully off-screen */
+		visibility: hidden;
 		transition:
 			transform var(--transition),
 			visibility var(--transition);
