@@ -1120,6 +1120,34 @@ footer {
 	.philosophy-left {
 		position: static;
 	}
+	.topbar,
+	nav {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.about-right {
+		align-items: center;
+		text-align: center;
+	}
+	.about-stats {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+	}
+	.stat + .stat {
+		border: none;
+		padding-left: 0;
+		padding-top: 0;
+		margin-top: 0;
+	}
+	.stat {
+		text-align: center;
+	}
+	.about-right .btn-ghost {
+		align-self: center;
+	}
+	.booking-actions {
+		flex-direction: column;
+	}
 }
 
 @media (max-width: 768px) {
@@ -1145,7 +1173,10 @@ footer {
 		justify-content: start;
 		padding: 48px 32px;
 		transform: translateX(100%);
-		transition: transform var(--transition);
+		visibility: hidden; /* Prevent horizontal scroll when closed */
+		transition:
+			transform var(--transition),
+			visibility var(--transition);
 		z-index: 100;
 		border-left: 1px solid var(--outline-variant);
 	}
@@ -1155,6 +1186,7 @@ footer {
 	}
 	body.menu-open .nav-content {
 		transform: translateX(0);
+		visibility: visible;
 	}
 	.nav-links {
 		flex-direction: column;
@@ -1250,95 +1282,7 @@ footer {
 	transform: translateY(0);
 }
 
-@media (max-width: 1024px) {
-	.hero,
-	.about,
-	.featured {
-		grid-template-columns: 1fr;
-	}
-	.hero-left {
-		padding: 80px 40px;
-	}
-	.hero-right {
-		min-height: 60vw;
-	}
-	.about-img-wrap {
-		min-height: 50vw;
-	}
-	.about-right {
-		padding: 64px 40px;
-	}
-	.featured-content {
-		padding: 64px 40px;
-	}
-	.services {
-		padding: 80px 40px;
-	}
-	.services-grid {
-		grid-template-columns: 1fr;
-	}
-	.section-header {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 24px;
-	}
-	.philosophy {
-		padding: 80px 40px;
-	}
-	.philosophy-inner {
-		grid-template-columns: 1fr;
-		gap: 48px;
-	}
-	.philosophy-left {
-		position: static;
-	}
-	.testimonials {
-		padding: 80px 40px;
-	}
-	.testimonials-grid {
-		grid-template-columns: 1fr;
-		gap: 2px;
-	}
-	.booking {
-		padding: 80px 40px;
-	}
-	footer {
-		padding: 64px 40px;
-		grid-template-columns: 1fr 1fr;
-		gap: 40px;
-	}
-	.footer-bottom {
-		padding: 20px 40px;
-	}
-	.topbar,
-	nav {
-		padding-left: 24px;
-		padding-right: 24px;
-	}
-	.about-right {
-		align-items: center;
-		text-align: center;
-	}
-	.about-stats {
-		grid-template-columns: repeat(3, 1fr);
-		gap: 16px;
-	}
-	.stat + .stat {
-		border: none;
-		padding-left: 0;
-		padding-top: 0;
-		margin-top: 0;
-	}
-	.stat {
-		text-align: center;
-	}
-	.about-right .btn-ghost {
-		align-self: center;
-	}
-	.booking-actions {
-		flex-direction: column;
-	}
-}
+
 
 .fadeInDown {
 	-webkit-animation-name: fadeInDown;
